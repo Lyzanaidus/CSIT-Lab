@@ -1,0 +1,11 @@
+PREDICATES
+	min(integer,integer,integer)
+	
+CLAUSES
+	min(A,B,M):-A>B,M=B.
+	min(A,B,M):-A<B,M=A.
+	
+GOAL
+	min(7,5,M).
+	
+	

@@ -1,0 +1,13 @@
+DOMAINS
+	list = integer*
+	
+PREDICATES
+	length(list,integer)
+	
+CLAUSES
+	length([],0).
+	length([H|T],L):-length(T,L1),L=L1+1.
+	
+GOAL
+	length([2,4,6,8],L).
+	

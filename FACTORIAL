@@ -1,0 +1,9 @@
+PREDICATES
+	fact(integer,integer)
+
+CLAUSES
+	fact(X,F):- X=0,F=1.
+	fact(X,F):- X<>0,T=X-1,fact(T,F1),F=X*F1.
+	
+GOAL
+	fact(5,F).
