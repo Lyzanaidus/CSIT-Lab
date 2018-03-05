@@ -1,0 +1,18 @@
+Kolmogorov-Smirnov Test
+	1	0.02	-0.30	0.30
+	2	0.30	-0.32	0.32
+	3	0.32	-0.34	0.34
+	4	0.34	-0.59	0.59
+	5	0.59	-0.64	0.64
+	6	0.64	-0.65	0.65
+	7	0.65	-0.66	0.66
+	8	0.66	-0.73	0.73
+	9	0.73	-1.00	1.00
+	10	1.00	1.00	0.00
+
+
+	D0 = Maximum of (D+ and D-) = Maximum of (1.000000 and 1.000000) = 1.000000
+
+	Dt= 5.25
+
+Since 1.00 <= 5.25,the generated random values are uniformly distributed.
