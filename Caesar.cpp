@@ -5,16 +5,16 @@ using namespace std;
 void cencrypt()
 {
     int k,i,t;
-    char c[50],p[50];
+    char c[50],p[50]="helloworld";
 
-    cout<<"\n\n\tEnter Plain text :- ";
+    /*cout<<"\n\n\tEnter Plain text :- ";
     cin.getline(p,50,'\n');
-
+*/
     cout<<"\n\n\tEnter Key :- ";
     cin>>k;
 
 
-    cout<<"\n\tCipher text :- \n\n\t\t"<<c;
+    cout<<"\n\tCipher text :- \n\n\t\t\t";
 
     for(i=0;i<strlen(p);i++)
     {
@@ -27,6 +27,7 @@ void cencrypt()
     }
 
     c[i]='\0';
+    cout<<c;
 
 }
 
@@ -41,7 +42,7 @@ void cdecrypt()
     cout<<"\n\n\tEnter Key :- ";
     cin>>k;
 
-    cout<<"\n\tPlain text :- \n\n\t\t"<<p;
+    cout<<"\n\tPlain text :- \n\n\t\t";
 
     for(i=0;i<strlen(p);i++)
     {
@@ -59,7 +60,7 @@ void cdecrypt()
 
 int main()
 {
-    char p[50]/*="helloworld"*/,c[50];
+    char p[50]="helloworld",c[50];
     int k,x=2;
 
     cout<<"\n\n\t\tEncrypt or Decrypt ??? :- ";
