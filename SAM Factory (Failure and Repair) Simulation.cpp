@@ -1,4 +1,5 @@
 #include<iostream>
+#include<conio.h>
 using namespace std;
 
 int random(int r, int a)
@@ -114,5 +115,6 @@ int main()
     }
     cout<<"\n\n\tTotsl Failures = "<<fc;
 
+    getch();
 
 }
