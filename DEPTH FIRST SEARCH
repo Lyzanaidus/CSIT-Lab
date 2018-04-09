@@ -1,0 +1,29 @@
+DOMAINS
+	list=symbol *
+
+PREDICATES
+	link(symbol,symbol)
+	go(symbol,symbol,list)
+	
+CLAUSES
+	link(a,e).
+	link(a,b).
+	link(b,c).
+	link(b,f).
+	link(e,f).
+	link(e,d).
+	link(f,c).
+	link(h,f).
+	link(g,h).
+	link(g,f).
+	
+	go(X,X,[X|P]).
+	go(X,Y,[X|T]):-
+		link(X,Z),
+		go(Z,Y,T).
+
+
+GOAL
+	go(a,c,P).
+	
+	
