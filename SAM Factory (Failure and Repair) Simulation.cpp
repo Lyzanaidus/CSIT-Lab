@@ -2,6 +2,91 @@
 #include<conio.h>
 using namespace std;
 
+#define max 500
+
+int Q[max];
+int qf=-1,qr=-1;
+
+int qfull()
+{
+    //cout<<"\n\n\t\t\t\tThis is <qfull>.";
+    //cout<<"\n\t\t\t\tArguments :- <None>";
+    if (qr==max-1)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int qempty()
+{
+    //cout<<"\n\n\t\t\t\tThis is <qfull>.";
+    //cout<<"\n\t\t\t\tArguments :- <None>";
+    if (qf==-1 && qr==-1)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+void Enqueue(int x)
+{
+    if(qfull())
+    {
+        cout<<"\n\n\t\t\tError!!! [Queue is Full]\n";
+        return;
+    }
+    else if (qempty())
+    {
+        qf = qr = 0;
+    }
+    else
+    {
+        qr = (qr+1);
+    }
+    Q[qr] = x;
+    //cout<<"\n\n\t\t"<<x<<" Enqueued at "<<qr+1;
+}
+
+void Dequeue()
+{
+    if(qempty())
+    {
+        cout<<"Error!!! [Queue is Empty]";
+        return;
+    }
+    else
+    {
+        qf = (qf+1);
+    }
+    //cout<<"\n\n\t\t"<<Q[qf-1]<<" Dequeued at "<<qf-1;
+}
+
+void disq()
+{
+    int i;
+    if (qempty())
+    {
+        cout<<"Error!!! [Queue is Empty]";
+        return;
+    }
+    else
+    {
+        for (i = qf; i <= qr; i++)
+        {
+            cout<<Q[i]<<" | ";
+        }
+    }
+}
+
+
+
 int random(int r, int a)
 {
     //cout<<"\n\n\t\t\t\tThis is <random>.";
@@ -89,10 +174,10 @@ int main()
         //cout<<"\n\n\t\t\t\tThis is <random> returned.";
         //cout<<"\n\t\t\t\tReturned : "<<r;
 
-        f = failure(r);
+        f = failure(r);             //
         fc=fc+f;
 
-        cout<<"\n\n\n\t\tDay :- "<<d<<" | Failures = "<<f;
+        //cout<<"\n\n\n\t\tDay :- "<<d<<" | Failures = "<<f;
 
         int i,j;
 
@@ -109,9 +194,17 @@ int main()
             {
                 //pop(sc);
             }
-            cout<<"\n\t\t M["<<fcc<<"] : Repair = "<<rep<<" days";
+            //cout<<"\n\t\t M["<<fcc<<"] : Repair = "<<rep<<" days";
+
+            for(j=1;j<=rep;j++)
+            {
+                Enqueue(fcc);
+            }
 
         }
+        Dequeue();
+        cout<<"\n\n "<<d<<" : >>";
+        disq();
     }
     cout<<"\n\n\tTotsl Failures = "<<fc;
 
